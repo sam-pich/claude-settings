@@ -1,0 +1,340 @@
+{
+  "company": {
+    "cik": "0000019617",
+    "name": "JPMORGAN CHASE & CO",
+    "ticker": "JPM",
+    "sic": "6021",
+    "sic_description": "National Commercial Banks",
+    "fiscal_year_end": "1231",
+    "state_of_incorporation": "DE",
+    "filings": [
+      {
+        "form": "8-K",
+        "date": "2026-01-13",
+        "accession": "0001628280-26-001915"
+      },
+      {
+        "form": "8-K",
+        "date": "2026-01-13",
+        "accession": "0001628280-26-001902"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-12-08",
+        "accession": "0000019617-25-001100"
+      },
+      {
+        "form": "10-Q",
+        "date": "2025-11-04",
+        "accession": "0001628280-25-048859"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-10-22",
+        "accession": "0001193125-25-246803"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-10-14",
+        "accession": "0001628280-25-044887"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-10-14",
+        "accession": "0001628280-25-044845"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-09-12",
+        "accession": "0000019617-25-000907"
+      },
+      {
+        "form": "10-Q",
+        "date": "2025-08-05",
+        "accession": "0000019617-25-000615"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-07-23",
+        "accession": "0001193125-25-163423"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-07-15",
+        "accession": "0000019617-25-000520"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-07-15",
+        "accession": "0000019617-25-000518"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-07-01",
+        "accession": "0000019617-25-000510"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-07-01",
+        "accession": "0000019617-25-000509"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-05-22",
+        "accession": "0000019617-25-000485"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-05-19",
+        "accession": "0000019617-25-000483"
+      },
+      {
+        "form": "10-Q",
+        "date": "2025-05-01",
+        "accession": "0000019617-25-000421"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-04-22",
+        "accession": "0001193125-25-089203"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-04-11",
+        "accession": "0000019617-25-000334"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-04-11",
+        "accession": "0000019617-25-000332"
+      }
+    ]
+  },
+  "years": [
+    2024,
+    2023,
+    2022,
+    2021,
+    2018,
+    2017,
+    2016,
+    2015,
+    2014,
+    2013,
+    2012,
+    2011
+  ],
+  "income_statement": {
+    "revenue": {
+      "name": "Revenue",
+      "values": {
+        "2024": 177556000000,
+        "2023": 158104000000,
+        "2022": 128695000000
+      },
+      "unit": "USD"
+    },
+    "cost_of_revenue": {
+      "name": "Cost of Revenue",
+      "values": {},
+      "unit": "USD"
+    },
+    "gross_profit": {
+      "name": "Gross Profit",
+      "values": {},
+      "unit": "USD"
+    },
+    "rd_expense": {
+      "name": "R&D Expense",
+      "values": {},
+      "unit": "USD"
+    },
+    "sga_expense": {
+      "name": "SG&A Expense",
+      "values": {},
+      "unit": "USD"
+    },
+    "operating_expenses": {
+      "name": "Operating Expenses",
+      "values": {},
+      "unit": "USD"
+    },
+    "operating_income": {
+      "name": "Operating Income (EBIT)",
+      "values": {},
+      "unit": "USD"
+    },
+    "interest_expense": {
+      "name": "Interest Expense",
+      "values": {
+        "2023": 81321000000,
+        "2022": 26097000000,
+        "2021": 5553000000
+      },
+      "unit": "USD"
+    },
+    "pretax_income": {
+      "name": "Pre-tax Income",
+      "values": {},
+      "unit": "USD"
+    },
+    "income_tax": {
+      "name": "Income Tax Expense",
+      "values": {
+        "2024": 16610000000,
+        "2023": 12060000000,
+        "2022": 8490000000
+      },
+      "unit": "USD"
+    },
+    "net_income": {
+      "name": "Net Income",
+      "values": {
+        "2024": 58471000000,
+        "2023": 49552000000,
+        "2022": 37676000000
+      },
+      "unit": "USD"
+    }
+  },
+  "balance_sheet": {
+    "cash": {
+      "name": "Cash & Equivalents",
+      "values": {
+        "2018": 278793000000,
+        "2017": 431304000000,
+        "2016": 391154000000,
+        "2015": 361683000000
+      },
+      "unit": "USD"
+    },
+    "accounts_receivable": {
+      "name": "Accounts Receivable",
+      "values": {},
+      "unit": "USD"
+    },
+    "inventory": {
+      "name": "Inventory",
+      "values": {},
+      "unit": "USD"
+    },
+    "total_current_assets": {
+      "name": "Total Current Assets",
+      "values": {},
+      "unit": "USD"
+    },
+    "ppe_net": {
+      "name": "PP&E, Net",
+      "values": {},
+      "unit": "USD"
+    },
+    "intangibles": {
+      "name": "Intangible Assets",
+      "values": {},
+      "unit": "USD"
+    },
+    "goodwill": {
+      "name": "Goodwill",
+      "values": {},
+      "unit": "USD"
+    },
+    "total_assets": {
+      "name": "Total Assets",
+      "values": {
+        "2024": 4002814000000,
+        "2023": 3875393000000,
+        "2022": 3665743000000
+      },
+      "unit": "USD"
+    },
+    "accounts_payable": {
+      "name": "Accounts Payable",
+      "values": {},
+      "unit": "USD"
+    },
+    "short_term_debt": {
+      "name": "Short-term Debt",
+      "values": {},
+      "unit": "USD"
+    },
+    "total_current_liabilities": {
+      "name": "Total Current Liabilities",
+      "values": {},
+      "unit": "USD"
+    },
+    "long_term_debt": {
+      "name": "Long-term Debt",
+      "values": {
+        "2013": 267889000000,
+        "2012": 249024000000,
+        "2011": 256775000000
+      },
+      "unit": "USD"
+    },
+    "total_liabilities": {
+      "name": "Total Liabilities",
+      "values": {
+        "2024": 3658056000000,
+        "2023": 3547515000000,
+        "2022": 3373411000000
+      },
+      "unit": "USD"
+    },
+    "retained_earnings": {
+      "name": "Retained Earnings",
+      "values": {},
+      "unit": "USD"
+    },
+    "total_equity": {
+      "name": "Total Shareholders' Equity",
+      "values": {
+        "2024": 344758000000,
+        "2023": 327878000000,
+        "2022": 292332000000
+      },
+      "unit": "USD"
+    }
+  },
+  "cash_flow_statement": {
+    "depreciation": {
+      "name": "Depreciation & Amortization",
+      "values": {},
+      "unit": "USD"
+    },
+    "stock_compensation": {
+      "name": "Stock-based Compensation",
+      "values": {},
+      "unit": "USD"
+    },
+    "cash_from_operations": {
+      "name": "Cash from Operations",
+      "values": {},
+      "unit": "USD"
+    },
+    "capex": {
+      "name": "Capital Expenditures",
+      "values": {},
+      "unit": "USD"
+    },
+    "acquisitions": {
+      "name": "Acquisitions",
+      "values": {},
+      "unit": "USD"
+    },
+    "cash_from_investing": {
+      "name": "Cash from Investing",
+      "values": {},
+      "unit": "USD"
+    },
+    "dividends_paid": {
+      "name": "Dividends Paid",
+      "values": {},
+      "unit": "USD"
+    },
+    "cash_from_financing": {
+      "name": "Cash from Financing",
+      "values": {},
+      "unit": "USD"
+    }
+  }
+}

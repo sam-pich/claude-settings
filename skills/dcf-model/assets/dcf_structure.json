@@ -1,0 +1,450 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DCF Model Workbook Structure",
+  "description": "Schema defining the structure of a DCF valuation Excel workbook",
+  "version": "1.0.0",
+
+  "workbook": {
+    "tabs": [
+      {
+        "name": "Cover",
+        "purpose": "Model identification and disclaimer",
+        "sections": [
+          {
+            "name": "header",
+            "start_row": 4,
+            "fields": [
+              {"row": 4, "col": "B", "content": "company_name", "format": "title"},
+              {"row": 5, "col": "B", "content": "ticker", "format": "subtitle"},
+              {"row": 7, "col": "B", "content": "Discounted Cash Flow Analysis", "format": "header"},
+              {"row": 8, "col": "B", "content": "dcf_type_label", "format": "normal"},
+              {"row": 10, "col": "B", "content": "date", "format": "date"}
+            ]
+          },
+          {
+            "name": "disclaimer",
+            "start_row": 12,
+            "content": "This model is for illustrative purposes only. Assumptions should be independently verified."
+          }
+        ]
+      },
+
+      {
+        "name": "Summary",
+        "purpose": "Valuation dashboard with key outputs",
+        "sections": [
+          {
+            "name": "valuation_summary",
+            "start_row": 3,
+            "columns": {"labels": "A", "base": "C", "bull": "D", "bear": "E"},
+            "rows": [
+              {"label": "Enterprise Value", "formula": "=DCF!enterprise_value"},
+              {"label": "Less: Net Debt", "formula": "=Historical!net_debt"},
+              {"label": "Equity Value", "formula": "=enterprise_value - net_debt"},
+              {"label": "Shares Outstanding", "formula": "=Assumptions!shares"},
+              {"label": "Implied Share Price", "formula": "=equity_value / shares"},
+              {"label": "Current Price", "formula": "=Assumptions!current_price"},
+              {"label": "Upside / (Downside)", "formula": "=(implied - current) / current", "format": "percentage"}
+            ]
+          },
+          {
+            "name": "sensitivity_mini",
+            "start_row": 12,
+            "description": "Mini sensitivity table for quick reference"
+          }
+        ]
+      },
+
+      {
+        "name": "Assumptions",
+        "purpose": "All model inputs organized by category",
+        "input_format": {"font_color": "blue", "editable": true},
+        "sections": [
+          {
+            "name": "model_config",
+            "start_row": 3,
+            "header": "Model Configuration",
+            "inputs": [
+              {"row": 4, "label": "DCF Type", "cell": "C4", "validation": ["Unlevered", "Levered"]},
+              {"row": 5, "label": "Complexity", "cell": "C5", "validation": ["2-stage", "3-stage", "LBO"]},
+              {"row": 6, "label": "Projection Years", "cell": "C6", "validation": {"min": 3, "max": 15}},
+              {"row": 7, "label": "Terminal Method", "cell": "C7", "validation": ["Perpetuity", "Exit Multiple", "Both"]},
+              {"row": 8, "label": "Historical Years", "cell": "C8", "validation": {"min": 3, "max": 10}}
+            ]
+          },
+          {
+            "name": "revenue",
+            "start_row": 12,
+            "header": "Revenue Assumptions",
+            "inputs": [
+              {"row": 14, "label": "Y1 Growth", "cells": "D14:H14", "format": "percentage"},
+              {"row": 15, "label": "Terminal Growth", "cell": "I15", "format": "percentage"}
+            ]
+          },
+          {
+            "name": "costs",
+            "start_row": 27,
+            "header": "Cost Assumptions",
+            "inputs": [
+              {"row": 28, "label": "Gross Margin Target", "cell": "C28", "format": "percentage"},
+              {"row": 29, "label": "R&D % Revenue", "cell": "C29", "format": "percentage"},
+              {"row": 30, "label": "SG&A % Revenue", "cell": "C30", "format": "percentage"},
+              {"row": 31, "label": "Other OpEx % Revenue", "cell": "C31", "format": "percentage"}
+            ]
+          },
+          {
+            "name": "working_capital",
+            "start_row": 42,
+            "header": "Working Capital",
+            "inputs": [
+              {"row": 43, "label": "DSO (Days)", "cell": "C43", "validation": {"min": 0, "max": 365}},
+              {"row": 44, "label": "DIO (Days)", "cell": "C44", "validation": {"min": 0, "max": 365}},
+              {"row": 45, "label": "DPO (Days)", "cell": "C45", "validation": {"min": 0, "max": 365}}
+            ]
+          },
+          {
+            "name": "capex",
+            "start_row": 52,
+            "header": "Capital Expenditure",
+            "inputs": [
+              {"row": 53, "label": "CapEx % Revenue", "cell": "C53", "format": "percentage"},
+              {"row": 54, "label": "D&A % Prior PP&E", "cell": "C54", "format": "percentage"}
+            ]
+          },
+          {
+            "name": "capital_structure",
+            "start_row": 60,
+            "header": "Capital Structure",
+            "inputs": [
+              {"row": 61, "label": "Risk-Free Rate", "cell": "C61", "format": "percentage"},
+              {"row": 62, "label": "Equity Risk Premium", "cell": "C62", "format": "percentage"},
+              {"row": 63, "label": "Beta (Levered)", "cell": "C63", "format": "number_2dp"},
+              {"row": 64, "label": "Cost of Equity", "cell": "C64", "formula": "=C61+C63*C62", "format": "percentage"},
+              {"row": 66, "label": "Target D/E Ratio", "cell": "C66", "format": "number_2dp"},
+              {"row": 67, "label": "Cost of Debt (Pre-tax)", "cell": "C67", "format": "percentage"},
+              {"row": 68, "label": "Tax Rate", "cell": "C68", "format": "percentage"},
+              {"row": 69, "label": "Cost of Debt (After-tax)", "cell": "C69", "formula": "=C67*(1-C68)", "format": "percentage"},
+              {"row": 71, "label": "Weight of Equity", "cell": "C71", "formula": "=1/(1+C66)", "format": "percentage"},
+              {"row": 72, "label": "Weight of Debt", "cell": "C72", "formula": "=C66/(1+C66)", "format": "percentage"},
+              {"row": 73, "label": "WACC", "cell": "C73", "formula": "=C71*C64+C72*C69", "format": "percentage", "highlight": true}
+            ]
+          },
+          {
+            "name": "terminal_value",
+            "start_row": 77,
+            "header": "Terminal Value",
+            "inputs": [
+              {"row": 78, "label": "Perpetuity Growth Rate", "cell": "C78", "format": "percentage"},
+              {"row": 79, "label": "Exit EBITDA Multiple", "cell": "C79", "format": "multiple"}
+            ]
+          },
+          {
+            "name": "other",
+            "start_row": 85,
+            "header": "Other Inputs",
+            "inputs": [
+              {"row": 86, "label": "Shares Outstanding (M)", "cell": "C86", "format": "number_1dp"},
+              {"row": 87, "label": "Current Stock Price", "cell": "C87", "format": "currency"}
+            ]
+          }
+        ],
+        "named_ranges": [
+          {"name": "WACC", "reference": "Assumptions!$C$73"},
+          {"name": "TaxRate", "reference": "Assumptions!$C$68"},
+          {"name": "TerminalGrowth", "reference": "Assumptions!$C$78"},
+          {"name": "ExitMultiple", "reference": "Assumptions!$C$79"},
+          {"name": "Shares", "reference": "Assumptions!$C$86"}
+        ]
+      },
+
+      {
+        "name": "Historical",
+        "purpose": "Historical financial data with computed metrics",
+        "sections": [
+          {
+            "name": "income_statement",
+            "start_row": 3,
+            "header": "INCOME STATEMENT",
+            "year_columns_start": "C",
+            "rows": [
+              {"label": "Revenue", "source": "edgar", "format": "millions"},
+              {"label": "YoY Growth", "formula": "=(current-prior)/prior", "format": "percentage"},
+              {"label": "Cost of Revenue", "source": "edgar", "format": "millions"},
+              {"label": "Gross Profit", "formula": "=Revenue-COGS", "format": "millions"},
+              {"label": "Gross Margin", "formula": "=GrossProfit/Revenue", "format": "percentage"},
+              {"label": "R&D Expense", "source": "edgar", "format": "millions"},
+              {"label": "SG&A Expense", "source": "edgar", "format": "millions"},
+              {"label": "Operating Expenses", "formula": "=R&D+SG&A", "format": "millions"},
+              {"label": "Operating Income (EBIT)", "formula": "=GrossProfit-OpEx", "format": "millions"},
+              {"label": "EBIT Margin", "formula": "=EBIT/Revenue", "format": "percentage"},
+              {"label": "Interest Expense", "source": "edgar", "format": "millions"},
+              {"label": "Pre-tax Income", "formula": "=EBIT-Interest", "format": "millions"},
+              {"label": "Income Tax", "source": "edgar", "format": "millions"},
+              {"label": "Effective Tax Rate", "formula": "=Tax/PreTax", "format": "percentage"},
+              {"label": "Net Income", "source": "edgar", "format": "millions"},
+              {"label": "Net Margin", "formula": "=NetIncome/Revenue", "format": "percentage"}
+            ]
+          },
+          {
+            "name": "balance_sheet",
+            "start_row": 27,
+            "header": "BALANCE SHEET",
+            "year_columns_start": "C",
+            "rows": [
+              {"label": "Cash & Equivalents", "source": "edgar", "format": "millions"},
+              {"label": "Accounts Receivable", "source": "edgar", "format": "millions"},
+              {"label": "Inventory", "source": "edgar", "format": "millions"},
+              {"label": "Other Current Assets", "source": "edgar", "format": "millions"},
+              {"label": "Total Current Assets", "formula": "=SUM(above)", "format": "millions"},
+              {"label": "PP&E, Net", "source": "edgar", "format": "millions"},
+              {"label": "Intangibles", "source": "edgar", "format": "millions"},
+              {"label": "Goodwill", "source": "edgar", "format": "millions"},
+              {"label": "Other Assets", "source": "edgar", "format": "millions"},
+              {"label": "Total Assets", "formula": "=SUM(all_assets)", "format": "millions"},
+              {"label": "---", "format": "separator"},
+              {"label": "Accounts Payable", "source": "edgar", "format": "millions"},
+              {"label": "Short-term Debt", "source": "edgar", "format": "millions"},
+              {"label": "Other Current Liabilities", "source": "edgar", "format": "millions"},
+              {"label": "Total Current Liabilities", "formula": "=SUM(above)", "format": "millions"},
+              {"label": "Long-term Debt", "source": "edgar", "format": "millions"},
+              {"label": "Other Liabilities", "source": "edgar", "format": "millions"},
+              {"label": "Total Liabilities", "formula": "=SUM(all_liab)", "format": "millions"},
+              {"label": "Total Equity", "source": "edgar", "format": "millions"},
+              {"label": "Total L + E", "formula": "=Liab+Equity", "format": "millions"},
+              {"label": "Check (A = L+E)", "formula": "=IF(Assets=L+E,\"OK\",\"ERROR\")", "format": "check"}
+            ]
+          },
+          {
+            "name": "cash_flow",
+            "start_row": 57,
+            "header": "CASH FLOW STATEMENT",
+            "year_columns_start": "C",
+            "rows": [
+              {"label": "Net Income", "link": "income_statement", "format": "millions"},
+              {"label": "D&A", "source": "edgar", "format": "millions"},
+              {"label": "Stock-based Comp", "source": "edgar", "format": "millions"},
+              {"label": "Change in Working Capital", "formula": "=(NWC-PriorNWC)", "format": "millions"},
+              {"label": "Other Operating", "source": "edgar", "format": "millions"},
+              {"label": "Cash from Operations", "source": "edgar", "format": "millions"},
+              {"label": "---", "format": "separator"},
+              {"label": "Capital Expenditures", "source": "edgar", "format": "millions"},
+              {"label": "Acquisitions", "source": "edgar", "format": "millions"},
+              {"label": "Other Investing", "source": "edgar", "format": "millions"},
+              {"label": "Cash from Investing", "source": "edgar", "format": "millions"},
+              {"label": "---", "format": "separator"},
+              {"label": "Debt Issued", "source": "edgar", "format": "millions"},
+              {"label": "Debt Repaid", "source": "edgar", "format": "millions"},
+              {"label": "Dividends Paid", "source": "edgar", "format": "millions"},
+              {"label": "Stock Repurchased", "source": "edgar", "format": "millions"},
+              {"label": "Cash from Financing", "source": "edgar", "format": "millions"}
+            ]
+          },
+          {
+            "name": "metrics",
+            "start_row": 80,
+            "header": "KEY METRICS",
+            "year_columns_start": "C",
+            "rows": [
+              {"label": "EBITDA", "formula": "=EBIT+DA", "format": "millions"},
+              {"label": "EBITDA Margin", "formula": "=EBITDA/Revenue", "format": "percentage"},
+              {"label": "DSO (Days)", "formula": "=AR/Revenue*365", "format": "days"},
+              {"label": "DIO (Days)", "formula": "=Inventory/COGS*365", "format": "days"},
+              {"label": "DPO (Days)", "formula": "=AP/COGS*365", "format": "days"},
+              {"label": "Cash Conversion Cycle", "formula": "=DSO+DIO-DPO", "format": "days"},
+              {"label": "CapEx % Revenue", "formula": "=CapEx/Revenue", "format": "percentage"},
+              {"label": "ROE", "formula": "=NetIncome/AvgEquity", "format": "percentage"},
+              {"label": "ROIC", "formula": "=NOPAT/AvgIC", "format": "percentage"}
+            ]
+          }
+        ]
+      },
+
+      {
+        "name": "Projections",
+        "purpose": "Integrated 3-statement forecast model",
+        "sections": [
+          {
+            "name": "income_statement",
+            "description": "Projected income statement with driver-based formulas"
+          },
+          {
+            "name": "balance_sheet",
+            "description": "Projected balance sheet tied to income statement and cash flow"
+          },
+          {
+            "name": "cash_flow",
+            "description": "Projected cash flow derived from I/S and B/S changes"
+          }
+        ],
+        "projection_logic": {
+          "revenue": "=prior_revenue * (1 + growth_rate)",
+          "cogs": "=revenue * (1 - gross_margin)",
+          "opex": "=revenue * opex_pct",
+          "ebit": "=gross_profit - opex",
+          "accounts_receivable": "=revenue * dso / 365",
+          "inventory": "=cogs * dio / 365",
+          "accounts_payable": "=cogs * dpo / 365",
+          "ppe": "=prior_ppe + capex - da",
+          "cash": "=plug_from_cashflow"
+        }
+      },
+
+      {
+        "name": "DCF Valuation",
+        "purpose": "Core DCF calculation",
+        "sections": [
+          {
+            "name": "fcf_buildup",
+            "start_row": 3,
+            "header": "FREE CASH FLOW BUILD-UP",
+            "rows": [
+              {"label": "EBIT", "link": "Projections!EBIT", "format": "millions"},
+              {"label": "Less: Taxes on EBIT", "formula": "=EBIT*TaxRate", "format": "millions"},
+              {"label": "NOPAT", "formula": "=EBIT-Taxes", "format": "millions"},
+              {"label": "Plus: D&A", "link": "Projections!DA", "format": "millions"},
+              {"label": "Less: CapEx", "link": "Projections!CapEx", "format": "millions"},
+              {"label": "Less: Change in NWC", "link": "Projections!dNWC", "format": "millions"},
+              {"label": "Unlevered Free Cash Flow", "formula": "=NOPAT+DA-CapEx-dNWC", "format": "millions", "highlight": true}
+            ]
+          },
+          {
+            "name": "discounting",
+            "start_row": 15,
+            "header": "DISCOUNTING",
+            "rows": [
+              {"label": "Discount Period (mid-year)", "values": [0.5, 1.5, 2.5, 3.5, 4.5]},
+              {"label": "Discount Factor", "formula": "=1/(1+WACC)^period", "format": "decimal_4"},
+              {"label": "PV of FCF", "formula": "=FCF*DF", "format": "millions"}
+            ]
+          },
+          {
+            "name": "terminal_value",
+            "start_row": 22,
+            "header": "TERMINAL VALUE",
+            "rows": [
+              {"label": "Terminal Year FCF", "link": "last_year_fcf", "format": "millions"},
+              {"label": "Terminal Year EBITDA", "link": "last_year_ebitda", "format": "millions"},
+              {"label": "TV (Perpetuity)", "formula": "=TermFCF*(1+g)/(WACC-g)", "format": "millions"},
+              {"label": "TV (Exit Multiple)", "formula": "=TermEBITDA*ExitMultiple", "format": "millions"},
+              {"label": "Terminal Value (Selected)", "formula": "=based_on_method", "format": "millions"},
+              {"label": "PV of Terminal Value", "formula": "=TV*DF_terminal", "format": "millions"}
+            ]
+          },
+          {
+            "name": "valuation_summary",
+            "start_row": 32,
+            "header": "VALUATION SUMMARY",
+            "rows": [
+              {"label": "Sum of PV of FCFs", "formula": "=SUM(PV_FCFs)", "format": "millions"},
+              {"label": "Plus: PV of Terminal Value", "link": "PV_TV", "format": "millions"},
+              {"label": "Enterprise Value", "formula": "=SUM_PV+PV_TV", "format": "millions", "highlight": true},
+              {"label": "Less: Total Debt", "link": "Historical!TotalDebt", "format": "millions"},
+              {"label": "Plus: Cash", "link": "Historical!Cash", "format": "millions"},
+              {"label": "Equity Value", "formula": "=EV-Debt+Cash", "format": "millions", "highlight": true},
+              {"label": "Shares Outstanding", "link": "Assumptions!Shares", "format": "millions"},
+              {"label": "Implied Share Price", "formula": "=EquityValue/Shares", "format": "currency", "highlight": true}
+            ]
+          }
+        ]
+      },
+
+      {
+        "name": "Sensitivity",
+        "purpose": "Sensitivity analysis tables and scenario toggles",
+        "sections": [
+          {
+            "name": "wacc_vs_growth",
+            "start_row": 3,
+            "header": "WACC vs Terminal Growth Rate",
+            "type": "data_table_2var",
+            "row_input": "WACC",
+            "row_values": [0.07, 0.075, 0.08, 0.085, 0.09, 0.095, 0.10],
+            "col_input": "TerminalGrowth",
+            "col_values": [0.015, 0.02, 0.025, 0.03, 0.035],
+            "output_cell": "DCF!ImpliedPrice"
+          },
+          {
+            "name": "wacc_vs_multiple",
+            "start_row": 15,
+            "header": "WACC vs Exit Multiple",
+            "type": "data_table_2var",
+            "row_input": "WACC",
+            "row_values": [0.07, 0.075, 0.08, 0.085, 0.09, 0.095, 0.10],
+            "col_input": "ExitMultiple",
+            "col_values": [8, 9, 10, 11, 12, 13, 14],
+            "output_cell": "DCF!ImpliedPrice"
+          },
+          {
+            "name": "scenario_toggle",
+            "start_row": 28,
+            "header": "SCENARIO ANALYSIS",
+            "type": "scenario_selector",
+            "scenarios": ["Base", "Bull", "Bear"],
+            "drivers": [
+              {"name": "Revenue CAGR", "base": 0.05, "bull": 0.08, "bear": 0.02},
+              {"name": "Terminal Margin", "base": 0.15, "bull": 0.18, "bear": 0.12},
+              {"name": "WACC", "base": 0.09, "bull": 0.08, "bear": 0.10},
+              {"name": "Terminal Growth", "base": 0.025, "bull": 0.03, "bear": 0.02}
+            ]
+          }
+        ]
+      },
+
+      {
+        "name": "Supporting",
+        "purpose": "Detail schedules for D&A, debt, working capital",
+        "sections": [
+          {
+            "name": "da_schedule",
+            "start_row": 3,
+            "header": "DEPRECIATION & AMORTIZATION SCHEDULE",
+            "columns": ["Year", "Opening PP&E", "CapEx", "D&A", "Closing PP&E"]
+          },
+          {
+            "name": "debt_schedule",
+            "start_row": 15,
+            "header": "DEBT SCHEDULE",
+            "columns": ["Year", "Opening Balance", "Issuance", "Repayment", "Interest", "Closing Balance"]
+          },
+          {
+            "name": "working_capital",
+            "start_row": 27,
+            "header": "WORKING CAPITAL DETAIL",
+            "columns": ["Year", "AR", "Inventory", "Prepaid", "AP", "Accrued", "NWC", "Change"]
+          }
+        ]
+      }
+    ],
+
+    "formatting": {
+      "colors": {
+        "input": {"font": "#0000FF", "description": "Blue for user inputs"},
+        "formula": {"font": "#000000", "description": "Black for formulas"},
+        "link": {"font": "#008000", "description": "Green for cross-sheet links"},
+        "highlight": {"fill": "#FFFF00", "description": "Yellow for key assumptions"},
+        "header": {"fill": "#F2F2F2", "description": "Light gray for headers"},
+        "subtotal": {"fill": "#DDEBF7", "description": "Light blue for subtotals"}
+      },
+      "number_formats": {
+        "millions": "#,##0.0",
+        "percentage": "0.0%",
+        "multiple": "0.0x",
+        "currency": "$#,##0.00",
+        "days": "0",
+        "decimal_4": "0.0000"
+      },
+      "column_widths": {
+        "label": 25,
+        "year": 12,
+        "unit": 8
+      }
+    },
+
+    "validation_rules": [
+      {"rule": "balance_sheet_balance", "check": "Assets == Liabilities + Equity"},
+      {"rule": "cash_ties", "check": "Ending Cash == Beginning + Net Cash Flow"},
+      {"rule": "terminal_growth_lt_wacc", "check": "g < WACC"},
+      {"rule": "no_formula_errors", "check": "No #REF!, #DIV/0!, #VALUE! errors"}
+    ]
+  }
+}

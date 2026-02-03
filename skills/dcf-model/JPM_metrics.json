@@ -1,0 +1,202 @@
+{
+  "company": {
+    "cik": "0000019617",
+    "name": "JPMORGAN CHASE & CO",
+    "ticker": "JPM",
+    "sic": "6021",
+    "sic_description": "National Commercial Banks",
+    "fiscal_year_end": "1231",
+    "state_of_incorporation": "DE",
+    "filings": [
+      {
+        "form": "8-K",
+        "date": "2026-01-13",
+        "accession": "0001628280-26-001915"
+      },
+      {
+        "form": "8-K",
+        "date": "2026-01-13",
+        "accession": "0001628280-26-001902"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-12-08",
+        "accession": "0000019617-25-001100"
+      },
+      {
+        "form": "10-Q",
+        "date": "2025-11-04",
+        "accession": "0001628280-25-048859"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-10-22",
+        "accession": "0001193125-25-246803"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-10-14",
+        "accession": "0001628280-25-044887"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-10-14",
+        "accession": "0001628280-25-044845"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-09-12",
+        "accession": "0000019617-25-000907"
+      },
+      {
+        "form": "10-Q",
+        "date": "2025-08-05",
+        "accession": "0000019617-25-000615"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-07-23",
+        "accession": "0001193125-25-163423"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-07-15",
+        "accession": "0000019617-25-000520"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-07-15",
+        "accession": "0000019617-25-000518"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-07-01",
+        "accession": "0000019617-25-000510"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-07-01",
+        "accession": "0000019617-25-000509"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-05-22",
+        "accession": "0000019617-25-000485"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-05-19",
+        "accession": "0000019617-25-000483"
+      },
+      {
+        "form": "10-Q",
+        "date": "2025-05-01",
+        "accession": "0000019617-25-000421"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-04-22",
+        "accession": "0001193125-25-089203"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-04-11",
+        "accession": "0000019617-25-000334"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-04-11",
+        "accession": "0000019617-25-000332"
+      }
+    ]
+  },
+  "metrics": {
+    "years": [
+      2024,
+      2023,
+      2022,
+      2021,
+      2018,
+      2017,
+      2016,
+      2015,
+      2014,
+      2013,
+      2012,
+      2011
+    ],
+    "growth": {
+      "revenue_growth_pct": {
+        "2024": 12.3,
+        "2023": 22.85
+      },
+      "gross_profit_growth_pct": {},
+      "ebit_growth_pct": {},
+      "net_income_growth_pct": {
+        "2024": 18.0,
+        "2023": 31.52
+      }
+    },
+    "margins": {
+      "gross_margin_pct": {},
+      "ebit_margin_pct": {},
+      "ebitda_margin_pct": {},
+      "net_margin_pct": {
+        "2024": 32.93,
+        "2023": 31.34,
+        "2022": 29.28
+      }
+    },
+    "returns": {
+      "roa_pct": {
+        "2024": 1.48,
+        "2023": 1.31,
+        "2022": 1.03
+      },
+      "roe_pct": {
+        "2024": 17.39,
+        "2023": 15.98,
+        "2022": 12.89
+      },
+      "roic_pct": {}
+    },
+    "working_capital": {
+      "dso_days": {},
+      "dio_days": {},
+      "dpo_days": {},
+      "cash_conversion_cycle_days": {}
+    },
+    "capital_intensity": {
+      "capex_to_revenue_pct": {},
+      "capex_to_da_ratio": {},
+      "da_to_revenue_pct": {}
+    },
+    "leverage": {
+      "debt_to_equity_ratio": {
+        "2024": 0.0,
+        "2023": 0.0,
+        "2022": 0.0
+      },
+      "debt_to_ebitda_ratio": {},
+      "interest_coverage_ratio": {}
+    },
+    "tax": {
+      "effective_tax_rate_pct": {}
+    }
+  },
+  "averages": {
+    "avg_revenue_growth": 0.17577498837348302,
+    "avg_gross_margin": null,
+    "avg_ebit_margin": null,
+    "avg_ebitda_margin": null,
+    "avg_net_margin": 0.3118261103622744,
+    "avg_roa": 0.012754460417978087,
+    "avg_roe": 0.1541760635926301,
+    "avg_roic": null,
+    "avg_dso": null,
+    "avg_dio": null,
+    "avg_dpo": null,
+    "avg_capex_to_revenue": null,
+    "avg_effective_tax_rate": null
+  }
+}

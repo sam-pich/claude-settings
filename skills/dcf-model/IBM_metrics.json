@@ -1,0 +1,231 @@
+{
+  "company": {
+    "cik": "0000051143",
+    "name": "INTERNATIONAL BUSINESS MACHINES CORP",
+    "ticker": "IBM",
+    "sic": "3570",
+    "sic_description": "Computer & office Equipment",
+    "fiscal_year_end": "1231",
+    "state_of_incorporation": "NY",
+    "filings": [
+      {
+        "form": "10-Q",
+        "date": "2025-10-23",
+        "accession": "0000051143-25-000064"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-10-23",
+        "accession": "0000051143-25-000063"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-10-22",
+        "accession": "0000051143-25-000061"
+      },
+      {
+        "form": "10-Q",
+        "date": "2025-07-24",
+        "accession": "0000051143-25-000052"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-07-24",
+        "accession": "0000051143-25-000051"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-07-23",
+        "accession": "0000051143-25-000048"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-06-20",
+        "accession": "0000950157-25-000533"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-05-02",
+        "accession": "0001104659-25-044116"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-04-29",
+        "accession": "0000051143-25-000035"
+      },
+      {
+        "form": "10-Q",
+        "date": "2025-04-24",
+        "accession": "0000051143-25-000032"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-04-24",
+        "accession": "0000051143-25-000031"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-04-23",
+        "accession": "0000051143-25-000026"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-03-12",
+        "accession": "0000051143-25-000018"
+      },
+      {
+        "form": "10-K",
+        "date": "2025-02-25",
+        "accession": "0000051143-25-000015"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-02-07",
+        "accession": "0001104659-25-010555"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-02-04",
+        "accession": "0000051143-25-000010"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-01-30",
+        "accession": "0000051143-25-000007"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-01-29",
+        "accession": "0000051143-25-000005"
+      },
+      {
+        "form": "8-K",
+        "date": "2024-12-09",
+        "accession": "0000051143-24-000052"
+      },
+      {
+        "form": "10-Q",
+        "date": "2024-10-30",
+        "accession": "0000051143-24-000049"
+      }
+    ]
+  },
+  "metrics": {
+    "years": [
+      2024,
+      2023,
+      2022,
+      2018,
+      2017,
+      2016
+    ],
+    "growth": {
+      "revenue_growth_pct": {
+        "2024": 1.44,
+        "2023": 2.2
+      },
+      "gross_profit_growth_pct": {
+        "2024": 3.65,
+        "2023": 4.93
+      },
+      "ebit_growth_pct": {},
+      "net_income_growth_pct": {
+        "2024": -19.71,
+        "2023": 357.72
+      }
+    },
+    "margins": {
+      "gross_margin_pct": {
+        "2024": 56.65,
+        "2023": 55.45,
+        "2022": 54.0
+      },
+      "ebit_margin_pct": {},
+      "ebitda_margin_pct": {},
+      "net_margin_pct": {
+        "2024": 9.6,
+        "2023": 12.13,
+        "2022": 2.71
+      }
+    },
+    "returns": {
+      "roa_pct": {
+        "2024": 4.42,
+        "2023": 5.72,
+        "2022": 1.29
+      },
+      "roe_pct": {
+        "2024": 24.17,
+        "2023": 33.73,
+        "2022": 7.47
+      },
+      "roic_pct": {}
+    },
+    "working_capital": {
+      "dso_days": {
+        "2024": 39.58,
+        "2023": 42.57,
+        "2022": 39.44
+      },
+      "dio_days": {
+        "2024": 17.3,
+        "2023": 15.38,
+        "2022": 20.35
+      },
+      "dpo_days": {
+        "2024": 54.1,
+        "2023": 54.72,
+        "2022": 53.11
+      },
+      "cash_conversion_cycle_days": {
+        "2024": 2.77,
+        "2023": 3.22,
+        "2022": 6.68
+      }
+    },
+    "capital_intensity": {
+      "capex_to_revenue_pct": {
+        "2024": 1.67,
+        "2023": 2.01,
+        "2022": 2.22
+      },
+      "capex_to_da_ratio": {
+        "2024": 0.48,
+        "2023": 0.59,
+        "2022": 0.56
+      },
+      "da_to_revenue_pct": {
+        "2024": 3.45,
+        "2023": 3.41,
+        "2022": 3.98
+      }
+    },
+    "leverage": {
+      "debt_to_equity_ratio": {
+        "2024": 0.0,
+        "2023": 0.0,
+        "2022": 0.0
+      },
+      "debt_to_ebitda_ratio": {},
+      "interest_coverage_ratio": {}
+    },
+    "tax": {
+      "effective_tax_rate_pct": {}
+    }
+  },
+  "averages": {
+    "avg_revenue_growth": 0.018204199204045694,
+    "avg_gross_margin": 0.5536712619497353,
+    "avg_ebit_margin": null,
+    "avg_ebitda_margin": null,
+    "avg_net_margin": 0.0814436004964366,
+    "avg_roa": 0.038087193519147626,
+    "avg_roe": 0.2179088118584278,
+    "avg_roic": null,
+    "avg_dso": 40.527821626807935,
+    "avg_dio": 17.672978256931927,
+    "avg_dpo": 53.978253789781554,
+    "avg_capex_to_revenue": 0.01968779842869386,
+    "avg_effective_tax_rate": null
+  }
+}

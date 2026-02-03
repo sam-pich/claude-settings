@@ -1,0 +1,361 @@
+{
+  "company": {
+    "cik": "0000051143",
+    "name": "INTERNATIONAL BUSINESS MACHINES CORP",
+    "ticker": "IBM",
+    "sic": "3570",
+    "sic_description": "Computer & office Equipment",
+    "fiscal_year_end": "1231",
+    "state_of_incorporation": "NY",
+    "filings": [
+      {
+        "form": "10-Q",
+        "date": "2025-10-23",
+        "accession": "0000051143-25-000064"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-10-23",
+        "accession": "0000051143-25-000063"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-10-22",
+        "accession": "0000051143-25-000061"
+      },
+      {
+        "form": "10-Q",
+        "date": "2025-07-24",
+        "accession": "0000051143-25-000052"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-07-24",
+        "accession": "0000051143-25-000051"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-07-23",
+        "accession": "0000051143-25-000048"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-06-20",
+        "accession": "0000950157-25-000533"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-05-02",
+        "accession": "0001104659-25-044116"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-04-29",
+        "accession": "0000051143-25-000035"
+      },
+      {
+        "form": "10-Q",
+        "date": "2025-04-24",
+        "accession": "0000051143-25-000032"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-04-24",
+        "accession": "0000051143-25-000031"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-04-23",
+        "accession": "0000051143-25-000026"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-03-12",
+        "accession": "0000051143-25-000018"
+      },
+      {
+        "form": "10-K",
+        "date": "2025-02-25",
+        "accession": "0000051143-25-000015"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-02-07",
+        "accession": "0001104659-25-010555"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-02-04",
+        "accession": "0000051143-25-000010"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-01-30",
+        "accession": "0000051143-25-000007"
+      },
+      {
+        "form": "8-K",
+        "date": "2025-01-29",
+        "accession": "0000051143-25-000005"
+      },
+      {
+        "form": "8-K",
+        "date": "2024-12-09",
+        "accession": "0000051143-24-000052"
+      },
+      {
+        "form": "10-Q",
+        "date": "2024-10-30",
+        "accession": "0000051143-24-000049"
+      }
+    ]
+  },
+  "years": [
+    2024,
+    2023,
+    2022,
+    2018,
+    2017,
+    2016
+  ],
+  "income_statement": {
+    "revenue": {
+      "name": "Revenue",
+      "values": {
+        "2024": 62753000000,
+        "2023": 61860000000,
+        "2022": 60530000000
+      },
+      "unit": "USD"
+    },
+    "cost_of_revenue": {
+      "name": "Cost of Revenue",
+      "values": {
+        "2024": 27201000000,
+        "2023": 27560000000,
+        "2022": 27842000000
+      },
+      "unit": "USD"
+    },
+    "gross_profit": {
+      "name": "Gross Profit",
+      "values": {
+        "2024": 35551000000,
+        "2023": 34300000000,
+        "2022": 32687000000
+      },
+      "unit": "USD"
+    },
+    "rd_expense": {
+      "name": "R&D Expense",
+      "values": {},
+      "unit": "USD"
+    },
+    "sga_expense": {
+      "name": "SG&A Expense",
+      "values": {},
+      "unit": "USD"
+    },
+    "operating_expenses": {
+      "name": "Operating Expenses",
+      "values": {},
+      "unit": "USD"
+    },
+    "operating_income": {
+      "name": "Operating Income (EBIT)",
+      "values": {},
+      "unit": "USD"
+    },
+    "interest_expense": {
+      "name": "Interest Expense",
+      "values": {
+        "2024": 1712000000,
+        "2023": 1607000000,
+        "2022": 1216000000
+      },
+      "unit": "USD"
+    },
+    "pretax_income": {
+      "name": "Pre-tax Income",
+      "values": {},
+      "unit": "USD"
+    },
+    "income_tax": {
+      "name": "Income Tax Expense",
+      "values": {
+        "2024": -218000000,
+        "2023": 1176000000,
+        "2022": -626000000
+      },
+      "unit": "USD"
+    },
+    "net_income": {
+      "name": "Net Income",
+      "values": {
+        "2024": 6023000000,
+        "2023": 7502000000,
+        "2022": 1639000000
+      },
+      "unit": "USD"
+    }
+  },
+  "balance_sheet": {
+    "cash": {
+      "name": "Cash & Equivalents",
+      "values": {
+        "2024": 13947000000,
+        "2023": 13068000000,
+        "2022": 7886000000
+      },
+      "unit": "USD"
+    },
+    "accounts_receivable": {
+      "name": "Accounts Receivable",
+      "values": {
+        "2024": 6804000000,
+        "2023": 7214000000,
+        "2022": 6541000000
+      },
+      "unit": "USD"
+    },
+    "inventory": {
+      "name": "Inventory",
+      "values": {
+        "2024": 1289000000,
+        "2023": 1161000000,
+        "2022": 1552000000
+      },
+      "unit": "USD"
+    },
+    "total_current_assets": {
+      "name": "Total Current Assets",
+      "values": {},
+      "unit": "USD"
+    },
+    "ppe_net": {
+      "name": "PP&E, Net",
+      "values": {},
+      "unit": "USD"
+    },
+    "intangibles": {
+      "name": "Intangible Assets",
+      "values": {},
+      "unit": "USD"
+    },
+    "goodwill": {
+      "name": "Goodwill",
+      "values": {},
+      "unit": "USD"
+    },
+    "total_assets": {
+      "name": "Total Assets",
+      "values": {
+        "2024": 137175000000,
+        "2023": 135241000000,
+        "2022": 127243000000
+      },
+      "unit": "USD"
+    },
+    "accounts_payable": {
+      "name": "Accounts Payable",
+      "values": {
+        "2024": 4032000000,
+        "2023": 4132000000,
+        "2022": 4051000000
+      },
+      "unit": "USD"
+    },
+    "short_term_debt": {
+      "name": "Short-term Debt",
+      "values": {},
+      "unit": "USD"
+    },
+    "total_current_liabilities": {
+      "name": "Total Current Liabilities",
+      "values": {},
+      "unit": "USD"
+    },
+    "long_term_debt": {
+      "name": "Long-term Debt",
+      "values": {
+        "2018": 42656000000,
+        "2017": 45052000000,
+        "2016": 40893000000
+      },
+      "unit": "USD"
+    },
+    "total_liabilities": {
+      "name": "Total Liabilities",
+      "values": {
+        "2024": 109783000000,
+        "2023": 112628000000,
+        "2022": 105222000000
+      },
+      "unit": "USD"
+    },
+    "retained_earnings": {
+      "name": "Retained Earnings",
+      "values": {},
+      "unit": "USD"
+    },
+    "total_equity": {
+      "name": "Total Shareholders' Equity",
+      "values": {
+        "2024": 27307000000,
+        "2023": 22533000000,
+        "2022": 21944000000
+      },
+      "unit": "USD"
+    }
+  },
+  "cash_flow_statement": {
+    "depreciation": {
+      "name": "Depreciation & Amortization",
+      "values": {
+        "2024": 2168000000,
+        "2023": 2109000000,
+        "2022": 2407000000
+      },
+      "unit": "USD"
+    },
+    "stock_compensation": {
+      "name": "Stock-based Compensation",
+      "values": {},
+      "unit": "USD"
+    },
+    "cash_from_operations": {
+      "name": "Cash from Operations",
+      "values": {},
+      "unit": "USD"
+    },
+    "capex": {
+      "name": "Capital Expenditures",
+      "values": {
+        "2024": 1048000000,
+        "2023": 1245000000,
+        "2022": 1346000000
+      },
+      "unit": "USD"
+    },
+    "acquisitions": {
+      "name": "Acquisitions",
+      "values": {},
+      "unit": "USD"
+    },
+    "cash_from_investing": {
+      "name": "Cash from Investing",
+      "values": {},
+      "unit": "USD"
+    },
+    "dividends_paid": {
+      "name": "Dividends Paid",
+      "values": {},
+      "unit": "USD"
+    },
+    "cash_from_financing": {
+      "name": "Cash from Financing",
+      "values": {},
+      "unit": "USD"
+    }
+  }
+}
