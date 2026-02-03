@@ -15,7 +15,7 @@ Personal Claude Code configuration for quick setup on new machines.
 Installs Claude Code + applies all settings in one command:
 
 ```bash
-git clone https://github.com/sam-pich/claude-settings.git /tmp/claude-settings && /tmp/claude-settings/install.sh
+rm -rf /tmp/claude-settings && git clone https://github.com/sam-pich/claude-settings.git /tmp/claude-settings && /tmp/claude-settings/install.sh
 ```
 
 ## Quick Setup (Claude Code Already Installed)

@@ -87,15 +87,18 @@ if [ -f "$SCRIPT_DIR/settings.json" ] && [ -f "$SCRIPT_DIR/CLAUDE.md" ]; then
     ok "Running from settings repo"
 else
     TEMP_DIR=$(mktemp -d)
+    CLONE_TARGET="$TEMP_DIR/claude-settings"
     info "Cloning settings from $REPO_URL..."
 
-    if command -v git &>/dev/null; then
-        git clone --depth 1 "$REPO_URL" "$TEMP_DIR/claude-settings"
-        SETTINGS_DIR="$TEMP_DIR/claude-settings"
-        ok "Settings cloned"
-    else
+    if ! command -v git &>/dev/null; then
         fail "git is required but not installed"
     fi
+
+    # Clean up any leftover clone from a previous run, then clone fresh
+    rm -rf "$CLONE_TARGET"
+    git clone --depth 1 "$REPO_URL" "$CLONE_TARGET"
+    SETTINGS_DIR="$CLONE_TARGET"
+    ok "Settings cloned"
 fi
 
 # --- Step 3: Backup existing config ---
