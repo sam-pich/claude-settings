@@ -6,6 +6,9 @@
 set -e
 
 REPO_URL="https://github.com/sam-pich/claude-settings.git"
+
+# On Windows (Git Bash), $HOME is /c/Users/<user> which maps correctly
+# to the Windows home directory, so $HOME/.claude works on all platforms
 CLAUDE_DIR="$HOME/.claude"
 
 # --- Colors ---
@@ -27,19 +30,37 @@ echo "  Claude Code Installer + Settings"
 echo "====================================="
 echo ""
 
+IS_WINDOWS=false
+OS="$(uname -s)"
+case "$OS" in
+    MINGW*|MSYS*|CYGWIN*) IS_WINDOWS=true ;;
+esac
+
 if command -v claude &>/dev/null; then
     CURRENT_VERSION=$(claude --version 2>/dev/null || echo "unknown")
+    ok "Claude Code already installed (${CURRENT_VERSION})"
+elif $IS_WINDOWS && command -v claude.exe &>/dev/null; then
+    CURRENT_VERSION=$(claude.exe --version 2>/dev/null || echo "unknown")
     ok "Claude Code already installed (${CURRENT_VERSION})"
 else
     info "Installing Claude Code..."
 
-    OS="$(uname -s)"
     case "$OS" in
         Linux|Darwin)
             curl -fsSL https://claude.ai/install.sh | bash
             ;;
         MINGW*|MSYS*|CYGWIN*)
-            fail "On Windows, run in PowerShell: irm https://claude.ai/install.ps1 | iex"
+            info "Detected Windows (Git Bash). Installing via PowerShell..."
+            if command -v powershell.exe &>/dev/null; then
+                powershell.exe -NoProfile -Command "irm https://claude.ai/install.ps1 | iex"
+            elif command -v npm &>/dev/null; then
+                warn "PowerShell not found, falling back to npm..."
+                npm install -g @anthropic-ai/claude-code
+            else
+                fail "Neither powershell.exe nor npm found. Install Claude Code manually:
+  PowerShell: irm https://claude.ai/install.ps1 | iex
+  npm:        npm install -g @anthropic-ai/claude-code"
+            fi
             ;;
         *)
             fail "Unsupported OS: $OS"
@@ -49,10 +70,11 @@ else
     # Ensure claude is on PATH for the rest of this script
     export PATH="$HOME/.local/bin:$PATH"
 
-    if command -v claude &>/dev/null; then
+    if command -v claude &>/dev/null || ($IS_WINDOWS && command -v claude.exe &>/dev/null); then
         ok "Claude Code installed successfully"
     else
-        fail "Claude Code installation failed. Install manually: https://code.claude.com/docs/en/setup"
+        warn "Could not verify Claude Code on PATH. You may need to restart your terminal."
+        warn "If installation failed, install manually: https://code.claude.com/docs/en/setup"
     fi
 fi
 
@@ -142,5 +164,11 @@ echo "    3. Plugins will auto-install on first launch"
 echo ""
 if command -v claude &>/dev/null; then
     echo "  Version: $(claude --version 2>/dev/null)"
+elif command -v claude.exe &>/dev/null; then
+    echo "  Version: $(claude.exe --version 2>/dev/null)"
+fi
+
+if $IS_WINDOWS; then
+    echo "  Note: You may need to restart your terminal for PATH changes."
 fi
 echo ""
