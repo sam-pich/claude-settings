@@ -10,14 +10,19 @@ Personal Claude Code configuration for quick setup on new machines.
 - `agents/` - Custom agents (code-reviewer, debugger)
 - `skills/` - Custom skills (dcf-model, doc-coauthoring, docx, pdf, pptx, etc.)
 
-## Quick Setup
+## One-Liner Install (New Machine)
+
+Installs Claude Code + applies all settings in one command:
 
 ```bash
-# Clone the repo
-git clone https://github.com/YOUR_USERNAME/claude-settings.git
-cd claude-settings
+git clone https://github.com/sam-pich/claude-settings.git /tmp/claude-settings && /tmp/claude-settings/install.sh
+```
 
-# Run setup script
+## Quick Setup (Claude Code Already Installed)
+
+```bash
+git clone https://github.com/sam-pich/claude-settings.git
+cd claude-settings
 ./setup.sh
 ```
 
